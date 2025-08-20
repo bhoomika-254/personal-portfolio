@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Calendar, Github, Linkedin, Twitter, Mail, Rss, Sun, Moon } from "lucide-react"
+import { MapPin, Calendar, Github, Linkedin, Twitter, Mail, Sun, Moon } from "lucide-react"
 
 function FloatingSocialLinks({ isDarkMode }: { isDarkMode: boolean }) {
   return (
@@ -63,16 +63,6 @@ function FloatingSocialLinks({ isDarkMode }: { isDarkMode: boolean }) {
         >
           <Mail className="w-5 h-5" />
         </a>
-
-
-
-
-
-
-
-
-
-
       </div>
     </div>
   )
@@ -91,10 +81,10 @@ function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
           <h1
             className={`font-montserrat font-black text-5xl lg:text-6xl mb-4 ${isDarkMode ? "text-white" : "text-black"}`}
           >
-            {"hey! i'm bhoomika"}
+            hey! i&apos;m bhoomika
           </h1>
           <p className={`text-xl leading-relaxed mb-6 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-            {"I build and experiment with AI agents."}
+            I build and experiment with AI agents.
           </p>
           <div className="flex justify-center gap-6">
             <a
@@ -253,9 +243,11 @@ export default function Portfolio() {
                 about me
               </h2>
               <p className={`text-lg leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-                {
-                  "i’m Bhoomika Ramchandani, a computer science undergrad passionate about building AI systems and generative technologies. I’ve worked on projects ranging from RAG-based chatbots and AI agents to research assistants with LangGraph, DSPy, and hugging face. I enjoy turning complex problems into practical solutions, and outside of tech, I’m always exploring hackathons, new ideas, and fresh challenges"
-                }
+                i&apos;m Bhoomika Ramchandani, a computer science undergrad passionate about building AI systems and
+                generative technologies. I&apos;ve worked on projects ranging from RAG-based chatbots and AI agents to
+                research assistants with LangGraph, DSPy, and hugging face. I enjoy turning complex problems into
+                practical solutions, and outside of tech, I&apos;m always exploring hackathons, new ideas, and fresh
+                challenges
               </p>
             </div>
           </section>
