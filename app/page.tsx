@@ -63,16 +63,16 @@ function FloatingSocialLinks({ isDarkMode }: { isDarkMode: boolean }) {
         >
           <Mail className="w-5 h-5" />
         </a>
-        <a
-          href="/rss.xml"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`transition-colors ${
-            isDarkMode ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-300"
-          }`}
-        >
-          <Rss className="w-5 h-5" />
-        </a>
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   )
