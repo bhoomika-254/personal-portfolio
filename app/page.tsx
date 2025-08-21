@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Calendar, Github, Linkedin, Twitter, Mail, Sun, Moon } from "lucide-react"
+import { MapPin, Calendar, Github, Linkedin, Twitter, Mail, Sun, Moon, ExternalLink } from "lucide-react"
 
 function FloatingSocialLinks({ isDarkMode }: { isDarkMode: boolean }) {
   return (
@@ -342,14 +342,16 @@ export default function Portfolio() {
                   description:
                     "a math agent web app with a React frontend and FastAPI backend that provides step-by-step math solutions. It integrates Qdrant for retrieval (RAG), Gemini LLM for reasoning, and guardrails/MCP services for safe, context-aware responses.",
                   techStack: ["React", "Tailwind CSS", "KaTex", "Qdrant", "FastAPI", "MCP", "DSPy"],
-                  github: "https://math-agentic-rag.vercel.app/",
+                  github: "https://github.com/bhoomika-254/Math-Agentic-RAG",
+                  preview: "https://math-agentic-rag.vercel.app/",
                 },
                 {
                   title: "Basic RAG based chatbot",
                   description:
                     "built using Gemini 2.0 Flash, ChromaDB, and Streamlit with an OCR Fallback for scanned pdfs.",
                   techStack: ["RAG", "Python", "ChromaDB", "Tesseract"],
-                  github: "https://rag-based-chatbott.streamlit.app/",
+                  github: "https://github.com/bhoomika-254/RAGchatbot",
+                  preview: "https://rag-based-chatbott.streamlit.app/",
                 },
                 {
                   title: "pokemon mcp server",
@@ -363,7 +365,8 @@ export default function Portfolio() {
                   description:
                     "a full-stack virtual science laboratory built using node.js and react, simulating real-world physics and chemistry experiments right in the browser. Each experiment comes with interactive visuals, concept-driven tasks, AI-powered assistance, and test-based evaluations.",
                   techStack: ["NodeJS", "ReactJS"],
-                  github: "https://virtualab.netlify.app/",
+                  github: "https://github.com/bhoomika-254/virtual-lab",
+                  preview: "https://virtualab.netlify.app/",
                 },
               ].map((project, index) => (
                 <Card
@@ -402,20 +405,38 @@ export default function Portfolio() {
                         ))}
                       </div>
                     </div>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center px-4 py-2 text-sm border rounded-lg transition-colors hover:shadow-md`}
-                      style={{
-                        backgroundColor: isDarkMode ? "#3F3F3F" : "transparent",
-                        borderColor: isDarkMode ? "#3F3F3F" : "#d1d5db",
-                        color: isDarkMode ? "#9ca3af" : "#4b5563",
-                      }}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      view on github
-                    </a>
+                    <div className="flex gap-3">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center px-4 py-2 text-sm border rounded-lg transition-colors hover:shadow-md`}
+                        style={{
+                          backgroundColor: isDarkMode ? "#3F3F3F" : "transparent",
+                          borderColor: isDarkMode ? "#3F3F3F" : "#d1d5db",
+                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                        }}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        view on github
+                      </a>
+                      {project.preview && (
+                        <a
+                          href={project.preview}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center px-4 py-2 text-sm border rounded-lg transition-colors hover:shadow-md`}
+                          style={{
+                            backgroundColor: isDarkMode ? "#3F3F3F" : "transparent",
+                            borderColor: isDarkMode ? "#3F3F3F" : "#d1d5db",
+                            color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          }}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          preview
+                        </a>
+                      )}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
