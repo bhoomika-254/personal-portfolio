@@ -30,8 +30,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const htmlClassName = [inter.variable, montserrat.variable, "antialiased"].join(" ")
+
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable} antialiased`}>
+    <html lang="en" className={htmlClassName}>
       <body className="font-sans">{children}</body>
     </html>
   )
