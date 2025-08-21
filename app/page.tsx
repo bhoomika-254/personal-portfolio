@@ -265,7 +265,7 @@ export default function Portfolio() {
                   role: "research intern",
                   company: "artificial intelligence institute of south carolina",
                   period: "august 2025 - present",
-                  location: "south carolina, usa",
+                  location: "remote",
                   description:
                     "Currently working on cutting-edge AI research projects focusing on machine learning algorithms and their practical applications in real-world scenarios.",
                 },
