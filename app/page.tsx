@@ -255,69 +255,91 @@ export default function Portfolio() {
           {/* Experience Section */}
           <section id="experience" className="animate-fade-in-up animate-delay-100">
             <h2
-              className={`font-montserrat font-bold text-3xl mb-12 text-center ${isDarkMode ? "text-white" : "text-black"}`}
+              className={`font-montserrat font-bold text-3xl mb-16 text-center ${isDarkMode ? "text-white" : "text-black"}`}
             >
               experience
             </h2>
-            <div className="space-y-8">
-              {[
-                {
-                  role: "research intern",
-                  company: "artificial intelligence institute of south carolina",
-                  period: "august 2025 - present",
-                  location: "remote",
-                  description:
-                    "Currently working on cutting-edge AI research projects focusing on machine learning algorithms and their practical applications in real-world scenarios.",
-                },
-                {
-                  role: "generative ai intern",
-                  company: "deepforrest.ai, a Ctrl S company",
-                  period: "april 2025 - june 2025",
-                  location: "hyderabad, tn",
-                  description:
-                    "Built an AI-powered Literature Assistant that automated pharmacovigilance workflows, cutting manual review time by 70%. Fine-tuned and optimized LLaMA 3.1 with LoRA, PEFT, and RLHF, and led evaluations against Qwen and GPT models to improve accuracy, latency, and deployment readiness.",
-                },
-              ].map((job, index) => (
-                <Card
-                  key={index}
-                  className={`border transition-all hover:shadow-lg`}
-                  style={{
-                    backgroundColor: isDarkMode ? "#111111" : "white",
-                    borderColor: isDarkMode ? "#3F3F3F" : "#e5e7eb",
-                  }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <div>
+            <div className="relative max-w-3xl mx-auto">
+              {/* Vertical line */}
+              <div
+                className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full ${
+                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
+                }`}
+              ></div>
+
+              <div className="space-y-12">
+                {[
+                  {
+                    role: "ml internship",
+                    company: "faff",
+                    period: "september 2025 - december 2025",
+                    location: "bangalore, ka",
+                  },
+                  {
+                    role: "generative ai intern",
+                    company: "deepforrest.ai, a Ctrl S company",
+                    period: "april 2025 - june 2025",
+                    location: "hyderabad, tn",
+                  },
+                ].map((job, index) => (
+                  <div
+                    key={index}
+                    className={`relative flex items-center justify-between ${
+                      index % 2 === 0 ? "flex-row-reverse" : ""
+                    }`}
+                  >
+                    {/* Content */}
+                    <div className="w-5/12">
+                      <div
+                        className={`p-6 rounded-lg border transition-all hover:shadow-lg ${
+                          index % 2 === 0 ? "text-right" : "text-left"
+                        }`}
+                        style={{
+                          backgroundColor: isDarkMode ? "#111111" : "white",
+                          borderColor: isDarkMode ? "#3F3F3F" : "#e5e7eb",
+                        }}
+                      >
                         <h3
-                          className={`font-montserrat font-semibold text-xl mb-2 ${isDarkMode ? "text-white" : "text-black"}`}
+                          className={`font-montserrat font-semibold text-xl mb-1 ${
+                            isDarkMode ? "text-white" : "text-black"
+                          }`}
                         >
                           {job.role}
                         </h3>
-                        <p className={`font-medium ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>{job.company}</p>
-                      </div>
-                      <div
-                        className={`flex flex-col md:items-end text-sm mt-2 md:mt-0 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
-                      >
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {job.period}
-                        </div>
-                        <div className="flex items-center gap-1 mt-1">
-                          <MapPin className="w-4 h-4" />
-                          {job.location}
+                        <p className={`font-medium text-sm mb-3 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
+                          {job.company}
+                        </p>
+                        <div
+                          className={`flex flex-col gap-1 text-sm ${
+                            isDarkMode ? "text-gray-500" : "text-gray-500"
+                          } ${index % 2 === 0 ? "items-end" : "items-start"}`}
+                        >
+                          <div className="flex items-center gap-1">
+                            <Calendar className="w-3 h-3" />
+                            {job.period}
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-3 h-3" />
+                            {job.location}
+                          </div>
                         </div>
                       </div>
                     </div>
-                    {/* Conditional rendering for description */}
-                    {job.description && (
-                      <p className={`leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-                        {job.description}
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
+
+                    {/* Dot on the timeline */}
+                    <div
+                      className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 z-10 transition-colors`}
+                      style={{
+                        backgroundColor: isDarkMode ? "white" : "black",
+                        borderColor: isDarkMode ? "white" : "black",
+                      }}
+                    ></div>
+
+                    {/* Empty space for the other side */}
+                    <div className="w-5/12"></div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
@@ -346,18 +368,17 @@ export default function Portfolio() {
                   preview: "https://math-agentic-rag.vercel.app/",
                 },
                 {
-                  title: "Basic RAG based chatbot",
-                  description:
-                    "built using Gemini 2.0 Flash, ChromaDB, and Streamlit with an OCR Fallback for scanned pdfs.",
-                  techStack: ["RAG", "Python", "ChromaDB", "Tesseract"],
-                  github: "https://github.com/bhoomika-254/RAGchatbot",
-                  preview: "https://rag-based-chatbott.streamlit.app/",
+                  title: "weezy",
+                  description: "a mini desktop pet for my windows",
+                  techStack: ["Python"],
+                  github: "https://github.com/bhoomika-254/weezy",
+                  preview: "https://x.com/bhoomikacodes/status/2022083998856688025?s=20",
                 },
                 {
                   title: "pokemon mcp server",
                   description:
                     "gives AI models access to comprehensive Pokémon data and battle simulation capabilities. connect this server to Claude Desktop to chat about pokémon with real data and simulate battles!",
-                  techStack: ["Python", "FastAPI"],
+                  techStack: ["Python"],
                   github: "https://github.com/bhoomika-254/Pokemon-MCP-Server",
                 },
                 {
@@ -451,12 +472,6 @@ export default function Portfolio() {
               skills
             </h2>
             <div className="max-w-4xl mx-auto">
-              <p
-                className={`text-lg leading-relaxed mb-12 text-center ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
-              >
-                here are some of the skills i have acquired over the years of my journey in the tech industry. i am
-                always looking to learn more and improve my skillset.
-              </p>
 
               <div className="space-y-6">
                 {/* Programming Languages */}
@@ -582,6 +597,9 @@ export default function Portfolio() {
                       "Postman",
                       "Tableau",
                       "FastAPI",
+                      "Google Cloud Services",
+                      "n8n",
+                      "Zapier",
                     ].map((skill, index) => (
                       <span
                         key={index}
