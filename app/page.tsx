@@ -259,15 +259,15 @@ export default function Portfolio() {
             >
               experience
             </h2>
-            <div className="relative max-w-3xl mx-auto">
+            <div className="relative max-w-4xl mx-auto px-4">
               {/* Vertical line */}
               <div
-                className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full ${
+                className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full hidden md:block ${
                   isDarkMode ? "bg-gray-700" : "bg-gray-200"
                 }`}
               ></div>
 
-              <div className="space-y-12">
+              <div className="space-y-8 md:space-y-12">
                 {[
                   {
                     role: "ml internship",
@@ -284,23 +284,23 @@ export default function Portfolio() {
                 ].map((job, index) => (
                   <div
                     key={index}
-                    className={`relative flex items-center justify-between ${
-                      index % 2 === 0 ? "flex-row-reverse" : ""
+                    className={`relative flex flex-col md:flex-row md:items-center md:justify-between ${
+                      index % 2 === 0 ? "md:flex-row-reverse" : ""
                     }`}
                   >
                     {/* Content */}
-                    <div className="w-5/12">
+                    <div className="w-full md:w-5/12 mb-4 md:mb-0">
                       <div
-                        className={`p-6 rounded-lg border transition-all hover:shadow-lg ${
-                          index % 2 === 0 ? "text-right" : "text-left"
-                        }`}
+                        className={`p-4 md:p-6 rounded-lg border transition-all hover:shadow-lg ${
+                          index % 2 === 0 ? "md:text-right" : "md:text-left"
+                        } text-center md:text-left`}
                         style={{
                           backgroundColor: isDarkMode ? "#111111" : "white",
                           borderColor: isDarkMode ? "#3F3F3F" : "#e5e7eb",
                         }}
                       >
                         <h3
-                          className={`font-montserrat font-semibold text-xl mb-1 ${
+                          className={`font-montserrat font-semibold text-lg md:text-xl mb-1 ${
                             isDarkMode ? "text-white" : "text-black"
                           }`}
                         >
@@ -310,16 +310,16 @@ export default function Portfolio() {
                           {job.company}
                         </p>
                         <div
-                          className={`flex flex-col gap-1 text-sm ${
+                          className={`flex flex-col gap-1 text-xs md:text-sm ${
                             isDarkMode ? "text-gray-500" : "text-gray-500"
-                          } ${index % 2 === 0 ? "items-end" : "items-start"}`}
+                          } ${index % 2 === 0 ? "md:items-end" : "md:items-start"} items-center md:items-start`}
                         >
                           <div className="flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
+                            <Calendar className="w-3 h-3 md:w-4 h-4" />
                             {job.period}
                           </div>
                           <div className="flex items-center gap-1">
-                            <MapPin className="w-3 h-3" />
+                            <MapPin className="w-3 h-3 md:w-4 h-4" />
                             {job.location}
                           </div>
                         </div>
@@ -328,7 +328,7 @@ export default function Portfolio() {
 
                     {/* Dot on the timeline */}
                     <div
-                      className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 z-10 transition-colors`}
+                      className={`absolute left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full border-2 z-10 transition-colors hidden md:block`}
                       style={{
                         backgroundColor: isDarkMode ? "white" : "black",
                         borderColor: isDarkMode ? "white" : "black",
@@ -336,7 +336,7 @@ export default function Portfolio() {
                     ></div>
 
                     {/* Empty space for the other side */}
-                    <div className="w-5/12"></div>
+                    <div className="hidden md:block w-5/12"></div>
                   </div>
                 ))}
               </div>
