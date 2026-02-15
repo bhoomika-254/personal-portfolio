@@ -7,61 +7,61 @@ import { MapPin, Calendar, Github, Linkedin, Twitter, Mail, Sun, Moon, ExternalL
 function FloatingSocialLinks({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <div
-      className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-sm rounded-full px-4 py-3 shadow-lg opacity-100 transition-colors`}
+      className={`fixed bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 md:py-3 shadow-lg opacity-100 transition-colors`}
       style={{
-        backgroundColor: isDarkMode ? "white" : "rgba(0, 0, 0, 0.9)",
+        backgroundColor: isDarkMode ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.9)",
       }}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 md:gap-4">
         <a
           href="https://github.com/bhoomika-254"
           target="_blank"
           rel="noopener noreferrer"
           className={`transition-colors ${
-            isDarkMode ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-300"
+            isDarkMode ? "text-white hover:text-gray-300" : "text-white hover:text-gray-300"
           }`}
         >
-          <Github className="w-5 h-5" />
+          <Github className="w-4 h-4 md:w-5 md:h-5" />
         </a>
         <a
           href="https://www.linkedin.com/in/bhoomikaramchandani/"
           target="_blank"
           rel="noopener noreferrer"
           className={`transition-colors ${
-            isDarkMode ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-300"
+            isDarkMode ? "text-white hover:text-gray-300" : "text-white hover:text-gray-300"
           }`}
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
         </a>
         <a
           href="https://x.com/bhoomikacodes"
           target="_blank"
           rel="noopener noreferrer"
           className={`transition-colors ${
-            isDarkMode ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-300"
+            isDarkMode ? "text-white hover:text-gray-300" : "text-white hover:text-gray-300"
           }`}
         >
-          <Twitter className="w-5 h-5" />
+          <Twitter className="w-4 h-4 md:w-5 md:h-5" />
         </a>
         <a
           href="https://hashnode.com/@bhoomika19"
           target="_blank"
           rel="noopener noreferrer"
           className={`transition-colors ${
-            isDarkMode ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-300"
+            isDarkMode ? "text-white hover:text-gray-300" : "text-white hover:text-gray-300"
           }`}
         >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z" />
           </svg>
         </a>
         <a
           href="mailto:bhoomikaramchandani2@gmail.com"
           className={`transition-colors ${
-            isDarkMode ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-300"
+            isDarkMode ? "text-white hover:text-gray-300" : "text-white hover:text-gray-300"
           }`}
         >
-          <Mail className="w-5 h-5" />
+          <Mail className="w-4 h-4 md:w-5 md:h-5" />
         </a>
       </div>
     </div>
@@ -180,31 +180,31 @@ export default function Portfolio() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors`} style={{ backgroundColor: isDarkMode ? "#111111" : "white" }}>
+    <div className={`min-h-screen transition-colors duration-700`} style={{ backgroundColor: isDarkMode ? "#000000" : "white" }}>
       <FloatingSocialLinks isDarkMode={isDarkMode} />
 
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-40 backdrop-blur-md border-b transition-colors`}
         style={{
-          backgroundColor: isDarkMode ? "rgba(17, 17, 17, 0.8)" : "rgba(255, 255, 255, 0.8)",
+          backgroundColor: isDarkMode ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.8)",
           borderColor: isDarkMode ? "#3F3F3F" : "#e5e7eb",
         }}
       >
-        <div className="max-w-4xl mx-auto px-6 py-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 md:py-4">
           <div className="flex justify-between items-center">
-            <div className={`font-montserrat font-bold text-xl ${isDarkMode ? "text-white" : "text-black"}`}>{""}</div>
-            <div className="flex items-center space-x-8">
+            <div className={`font-montserrat font-bold text-lg md:text-xl ${isDarkMode ? "text-white" : "text-black"}`}>{""}</div>
+            <div className="flex items-center space-x-4 md:space-x-8">
               {[
-                { id: "about", label: "about" },
-                { id: "experience", label: "experience" },
-                { id: "work", label: "work" },
-                { id: "skills", label: "skills" },
+                { id: "about", label: "About" },
+                { id: "experience", label: "Experience" },
+                { id: "work", label: "Work" },
+                { id: "skills", label: "Skills" },
               ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-xs md:text-sm font-medium transition-colors ${
                     activeSection === item.id
                       ? isDarkMode
                         ? "text-white"
@@ -219,10 +219,10 @@ export default function Portfolio() {
               ))}
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-full transition-colors`}
+                className={`p-1.5 md:p-2 rounded-full transition-colors duration-700`}
                 style={{
                   backgroundColor: isDarkMode ? "#3F3F3F" : "transparent",
-                  color: isDarkMode ? "#9ca3af" : "#4b5563",
+                  color: isDarkMode ? "#ffffff" : "#4b5563",
                 }}
               >
                 {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -232,7 +232,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      <div className="max-w-4xl mx-auto px-6 pt-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-20">
         <ProfileHeader isDarkMode={isDarkMode} />
 
         <div className="space-y-24">
@@ -240,7 +240,7 @@ export default function Portfolio() {
           <section id="about" className="animate-fade-in-up">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className={`font-montserrat font-bold text-3xl mb-8 ${isDarkMode ? "text-white" : "text-black"}`}>
-                about me
+                About Me
               </h2>
               <p className={`text-lg leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                 i&apos;m Bhoomika Ramchandani, a computer science undergrad passionate about building AI systems and
@@ -257,12 +257,12 @@ export default function Portfolio() {
             <h2
               className={`font-montserrat font-bold text-3xl mb-16 text-center ${isDarkMode ? "text-white" : "text-black"}`}
             >
-              experience
+              Experience
             </h2>
             <div className="relative max-w-4xl mx-auto px-4">
               {/* Vertical line */}
               <div
-                className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full hidden md:block ${
+                className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full md:block ${
                   isDarkMode ? "bg-gray-700" : "bg-gray-200"
                 }`}
               ></div>
@@ -295,7 +295,7 @@ export default function Portfolio() {
                           index % 2 === 0 ? "md:text-right" : "md:text-left"
                         } text-center md:text-left`}
                         style={{
-                          backgroundColor: isDarkMode ? "#111111" : "white",
+                          backgroundColor: isDarkMode ? "#0f0f0f" : "white",
                           borderColor: isDarkMode ? "#3F3F3F" : "#e5e7eb",
                         }}
                       >
@@ -328,7 +328,7 @@ export default function Portfolio() {
 
                     {/* Dot on the timeline */}
                     <div
-                      className={`absolute left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full border-2 z-10 transition-colors hidden md:block`}
+                      className={`absolute left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full border-2 z-10 transition-colors md:block`}
                       style={{
                         backgroundColor: isDarkMode ? "white" : "black",
                         borderColor: isDarkMode ? "white" : "black",
@@ -348,7 +348,7 @@ export default function Portfolio() {
             <h2
               className={`font-montserrat font-bold text-3xl mb-12 text-center ${isDarkMode ? "text-white" : "text-black"}`}
             >
-              projects
+              Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
@@ -394,7 +394,7 @@ export default function Portfolio() {
                   key={index}
                   className={`group border transition-all hover:shadow-lg`}
                   style={{
-                    backgroundColor: isDarkMode ? "#111111" : "white",
+                    backgroundColor: isDarkMode ? "#0f0f0f" : "white",
                     borderColor: isDarkMode ? "#3F3F3F" : "#e5e7eb",
                   }}
                 >
@@ -418,7 +418,7 @@ export default function Portfolio() {
                             className={`px-3 py-1 text-xs rounded-full transition-colors`}
                             style={{
                               backgroundColor: isDarkMode ? "#3F3F3F" : "#f3f4f6",
-                              color: isDarkMode ? "#9ca3af" : "#4b5563",
+                              color: isDarkMode ? "#ffffff" : "#4b5563",
                             }}
                           >
                             {tech}
@@ -435,7 +435,7 @@ export default function Portfolio() {
                         style={{
                           backgroundColor: isDarkMode ? "#3F3F3F" : "transparent",
                           borderColor: isDarkMode ? "#3F3F3F" : "#d1d5db",
-                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          color: isDarkMode ? "#ffffff" : "#4b5563",
                         }}
                       >
                         <Github className="w-4 h-4 mr-2" />
@@ -450,7 +450,7 @@ export default function Portfolio() {
                           style={{
                             backgroundColor: isDarkMode ? "#3F3F3F" : "transparent",
                             borderColor: isDarkMode ? "#3F3F3F" : "#d1d5db",
-                            color: isDarkMode ? "#9ca3af" : "#4b5563",
+                            color: isDarkMode ? "#ffffff" : "#4b5563",
                           }}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
@@ -469,7 +469,7 @@ export default function Portfolio() {
             <h2
               className={`font-montserrat font-bold text-3xl mb-8 text-center ${isDarkMode ? "text-white" : "text-black"}`}
             >
-              skills
+              Skills
             </h2>
             <div className="max-w-4xl mx-auto">
 
@@ -488,7 +488,7 @@ export default function Portfolio() {
                         className={`px-4 py-2 text-sm rounded-lg transition-colors`}
                         style={{
                           backgroundColor: isDarkMode ? "#3F3F3F" : "#f3f4f6",
-                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          color: isDarkMode ? "#ffffff" : "#4b5563",
                         }}
                       >
                         {skill}
@@ -522,7 +522,7 @@ export default function Portfolio() {
                         className={`px-4 py-2 text-sm rounded-lg transition-colors`}
                         style={{
                           backgroundColor: isDarkMode ? "#3F3F3F" : "#f3f4f6",
-                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          color: isDarkMode ? "#ffffff" : "#4b5563",
                         }}
                       >
                         {skill}
@@ -545,7 +545,7 @@ export default function Portfolio() {
                         className={`px-4 py-2 text-sm rounded-lg transition-colors`}
                         style={{
                           backgroundColor: isDarkMode ? "#3F3F3F" : "#f3f4f6",
-                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          color: isDarkMode ? "#ffffff" : "#4b5563",
                         }}
                       >
                         {skill}
@@ -568,7 +568,7 @@ export default function Portfolio() {
                         className={`px-4 py-2 text-sm rounded-lg transition-colors`}
                         style={{
                           backgroundColor: isDarkMode ? "#3F3F3F" : "#f3f4f6",
-                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          color: isDarkMode ? "#ffffff" : "#4b5563",
                         }}
                       >
                         {skill}
@@ -606,7 +606,7 @@ export default function Portfolio() {
                         className={`px-4 py-2 text-sm rounded-lg transition-colors`}
                         style={{
                           backgroundColor: isDarkMode ? "#3F3F3F" : "#f3f4f6",
-                          color: isDarkMode ? "#9ca3af" : "#4b5563",
+                          color: isDarkMode ? "#ffffff" : "#4b5563",
                         }}
                       >
                         {skill}
